@@ -1,0 +1,12 @@
+<div class="github_info">
+  <h1>Github Dashboard </h1>
+
+  <% if current_user %>
+  Hello, <%= current_user.nickname %>! - <%= link_to "Logout", logout_path, method: :delete %>
+  <% else %>
+  <%= link_to "Sign in with Github", "/auth/github"%>
+  <% end %>
+
+  <div class="user_repos">
+    <h4>User Repos for <%= current_user.nickname %> - Total: <%=  @user_repo_presenter.display_user_repo_count %></h4>
+</div>
